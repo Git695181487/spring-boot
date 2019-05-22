@@ -1,0 +1,97 @@
+https://www.cnblogs.com/ityouknow/p/5662753.html
+
+http://www.cnblogs.com/sam-uncle/p/8796212.html
+https://www.cnblogs.com/sam-uncle/p/8796746.html
+
+http://www.ityouknow.com/spring-boot.html
+https://www.cnblogs.com/ityouknow/p/5662753.html
+
+
+
+二、知识点引申
+其实上面application.properties一共有四个目录可以放置：
+外置，在相对于应用程序运行目录的/congfig子目录里
+外置，在应用程序运行的目录里
+内置，在config包内
+内置，在classpath根目录（即我们上述实例中的方式）
+其中1和2适用于生产环境，打包后由于发布包不能修改，配置文件放在发布包之外，可以很方便的配置。
+
+位置如下：
+3和4适用于开发环境，位置如下：
+如果同时在四个地方都有配置文件，配置文件的优先级是 1 > 2 > 3 >4。
+
+spring-boot-starter：核心模块，包括自动配置支持、日志和YAML；
+spring-boot-starter-test：测试模块，包括JUnit、Hamcrest、Mockito。
+
+@RestController的意思就是controller里面的方法都以json格式输出，不用再写什么jackjson配置的了！
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+    <optional>true</optional>
+</dependency>
+
+<plugins>
+    <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <!--热部署-->
+        <configuration>
+            <fork>true</fork>
+        </configuration>
+    </plugin>
+</plugins>
+
+一、springboot使用自定义配置文件
+	@Component//使用@Configuration也可以
+	@ConfigurationProperties(prefix = "myconfig")//前缀
+	@PropertySource(value = "classpath:myconfig.yml")//配置文件路径
+自定的配置文件里的key和application.properties文件里的key重名，则以application文件里的为准（公共配置文件application.properties和自定义配置文件xxx.properties中
+	配置相同的的配置项的不同值，因为公共配置文件的优先权最高，会覆盖掉自定义配置文件中的内容）	
+
+https://blog.csdn.net/valada/article/details/80892573(Spring Cloud)
+
+http://www.cnblogs.com/chry/p/7250584.html(Spring Cloud 二)
+
+https://blog.csdn.net/forezp/article/details/70037291(Spring Cloud 六)
+
+
+
+@Configuration把一个类作为一个IoC容器，它的某个方法头上如果注册了@Bean，就会作为这个Spring容器中的Bean。
+@Scope注解 作用域
+@Lazy(true) 表示延迟初始化
+@Service用于标注业务层组件、 
+@Controller用于标注控制层组件（如struts中的action）
+@Repository用于标注数据访问组件，即DAO组件。
+@Component泛指组件，当组件不好归类的时候，我们可以使用这个注解进行标注。
+@Scope用于指定scope作用域的（用在类上）
+@PostConstruct用于指定初始化方法（用在方法上）
+@PreDestory用于指定销毁方法（用在方法上）
+@Resource 默认按名称装配，当找不到与名称匹配的bean才会按类型装配。
+@DependsOn：定义Bean初始化及销毁时的顺序
+@Primary：自动装配时当出现多个Bean候选者时，被注解为@Primary的Bean将作为首选者，否则将抛出异常
+@Autowired 默认按类型装配，如果我们想使用按名称装配，可以结合@Qualifier注解一起使用
+@Autowired @Qualifier("personDaoBean") 存在多个实例配合使用
+
+@Bean：注解的方法，参数的取值，先根据参数的类型从spring容器中获取bean，如果spring容器中有多个bean的类型和参数的
+	       类型一致，则获取和参数名一样的bean，否则报错
+	   @Bean(initMethod = "init")初始化之前执行该类的init方法，
+	   @Bean(destroyMethod = "cleanup")容器销毁之前执行该类的cleanup方法，
+	   @Bean(name = "myFoo")，@Bean(name = { "dataSource", "subsystemA-dataSource", "subsystemB-dataSource" })
+@Scope：@Scope("prototype")bean的模式，单例还是多例	       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
