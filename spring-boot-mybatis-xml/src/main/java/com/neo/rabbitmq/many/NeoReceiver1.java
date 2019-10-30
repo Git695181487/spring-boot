@@ -11,10 +11,12 @@ public class NeoReceiver1 {
 	public static int count = 0;
 	
     @RabbitHandler
-    public void process(String neo) {
-        System.out.println("Receiver 1: " + neo);
+    public void process(String neo) throws Exception {
+        System.out.println("Receiver 1接收到的信息为: " + neo);
         count++;
-        System.out.println("---------------------------" + count);
+        if(count == 30){
+        	Thread.sleep(5000);
+        }
     }
 
 }

@@ -3,6 +3,9 @@ https://www.cnblogs.com/ityouknow/p/5662753.html
 http://www.cnblogs.com/sam-uncle/p/8796212.html
 https://www.cnblogs.com/sam-uncle/p/8796746.html
 
+
+http://www.ityouknow.com/springboot/2017/06/26/springboot-shiro.html(好网址（海科融通）)
+
 http://www.ityouknow.com/spring-boot.html
 https://www.cnblogs.com/ityouknow/p/5662753.html
 
@@ -79,6 +82,9 @@ https://blog.csdn.net/forezp/article/details/70037291(Spring Cloud 六)
 	   @Bean(destroyMethod = "cleanup")容器销毁之前执行该类的cleanup方法，
 	   @Bean(name = "myFoo")，@Bean(name = { "dataSource", "subsystemA-dataSource", "subsystemB-dataSource" })
 @Scope：@Scope("prototype")bean的模式，单例还是多例	       
+
+
+
 
 
 

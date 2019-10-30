@@ -8,7 +8,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.neo.rabbitmq.fanout.FanoutSender;
 import com.neo.rabbitmq.helllo.HelloSender;
-import com.neo.rabbitmq.many.NeoSender;
+import com.neo.rabbitmq.many.NeoSender1;
 import com.neo.rabbitmq.many.NeoSender2;
 import com.neo.rabbitmq.model.User;
 import com.neo.rabbitmq.object.ObjectSender;
@@ -22,7 +22,7 @@ public class RabbitMqHelloTest {
 	private HelloSender helloSender;
 	
 	@Autowired
-	private NeoSender neoSender;
+	private NeoSender1 neoSender;
 	
 	@Autowired
 	private NeoSender2 neoSender2;

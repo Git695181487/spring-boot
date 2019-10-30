@@ -10,8 +10,9 @@ import com.neo.Application;
 @SpringBootTest(classes = Application.class)
 @RunWith(SpringJUnit4ClassRunner.class)
 public class TestDB {
-
     @Test
     public void test(){
+    	
     }
+    
 }
