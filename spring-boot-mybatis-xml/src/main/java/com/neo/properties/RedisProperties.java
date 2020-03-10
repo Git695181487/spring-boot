@@ -1,12 +1,11 @@
 package com.neo.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties(prefix="spring.redis") //配置文件里属性的key的前缀
-@PropertySource("classpath:redis-dev.properties") //指定的配置文件
+//@PropertySource("classpath:redis-dev.properties") //指定的配置文件
 public class RedisProperties {
     
     private static String database;

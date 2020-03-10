@@ -19,6 +19,8 @@ public class HelloSender {
 		String context = "hello " + new Date();
 		System.out.println("Sender : " + context);
 		this.rabbitTemplate.convertAndSend("hello", context);
+		//第一个交换机，第二个路由Key,第三个是消息内容
+		rabbitTemplate.convertAndSend("testTopicExchange","key1.a.c.key2", " this is  RabbitMQ!");
 	}
 	/**
 	 * 向hello队列发送消息

@@ -1,5 +1,7 @@
 package com.neo.rabbitmq;
 
+import java.util.Random;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,9 +61,13 @@ public class RabbitMqHelloTest {
 	 */
 	@Test
 	public void manyToMany() throws Exception {
-		for (int i=0;i<100;i++){
-			neoSender.send(i);
-			neoSender2.send(i);
+		
+		for(int k = 0; k < 50; k++){
+			Thread.sleep(3000);	
+			for (int i=0;i<new Random().nextInt(100);i++){
+				neoSender.send(i);
+				neoSender2.send(i);
+			}
 		}
 	}
 	
